@@ -9,12 +9,15 @@ build1:
     - chmod 0777 /home/centos/eschool.jar
     - rm -rf /home/centos/eSchool/
     - rm -rf /home/centos/builds/
-    # - rm -rf /home/centos/eschool.jar
-    # - scp /home/centos/eschool.jar centos@10.0.12.8:/home/centos/
-    # - ssh centos@10.0.12.8 'java -jar /home/centos/eschool.jar > eschool.log &'
-    # - scp /home/centos/eschool.jar centos@10.0.12.7:/home/centos/
-    # - ssh centos@10.0.12.7 'java -jar /home/centos/eschool.jar > eschool.log &'
 
+  tags:
+    - my-runner
+
+test1:
+  stage: test
+  script:
+    - mvn test -Dmaven.test.failure.ignore=true
+    - rm -rf /home/centos/builds/
   tags:
     - my-runner
 
