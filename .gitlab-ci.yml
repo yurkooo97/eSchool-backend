@@ -1,0 +1,35 @@
+build1:
+  stage: build
+  script:
+    - cd /home/centos/
+    - git clone https://github.com/OlehKuryshko/eSchool.git
+    - cd /home/centos/eSchool/
+    - mvn clean package -DskipTests
+    - mv /home/centos/eSchool/target/eschool.jar /home/centos/eschool.jar
+    - chmod 0777 /home/centos/eschool.jar
+    - rm -rf /home/centos/eSchool/
+    - rm -rf /home/centos/builds/
+    # - ansible --version
+    # - ansible-playbook -i /home/centos/ansible/hosts.txt /home/centos/ansible/playbook_be.yml
+    # - rm -rf /home/centos/eschool.jar
+    # - scp /home/centos/eschool.jar centos@10.0.12.8:/home/centos/
+    # - ssh centos@10.0.12.8 'java -jar /home/centos/eschool.jar > eschool.log &'
+    # - scp /home/centos/eschool.jar centos@10.0.12.7:/home/centos/
+    # - ssh centos@10.0.12.7 'java -jar /home/centos/eschool.jar > eschool.log &'
+
+  tags:
+    - my-runner
+
+deploy1:
+  stage: deploy
+  script:
+    - ansible --version
+    - ansible-playbook -i /home/centos/ansible/hosts.txt /home/centos/ansible/playbook_be.yml
+    - rm -rf /home/centos/eschool.jar
+    # - scp /home/centos/eschool.jar centos@10.0.12.8:/home/centos/
+    # - ssh centos@10.0.12.8 'java -jar /home/centos/eschool.jar > eschool.log &'
+    # - scp /home/centos/eschool.jar centos@10.0.12.7:/home/centos/
+    # - ssh centos@10.0.12.7 'java -jar /home/centos/eschool.jar > eschool.log &'
+  when: manual
+  tags:
+    - my-runner
