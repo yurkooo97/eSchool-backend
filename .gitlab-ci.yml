@@ -8,7 +8,6 @@ build1:
     - mv /home/centos/eSchool/target/eschool.jar /home/centos/eschool.jar
     - chmod 0777 /home/centos/eschool.jar
     - rm -rf /home/centos/eSchool/
-    - rm -rf /home/centos/builds/
     # - rm -rf /home/centos/eschool.jar
     # - scp /home/centos/eschool.jar centos@10.0.12.8:/home/centos/
     # - ssh centos@10.0.12.8 'java -jar /home/centos/eschool.jar > eschool.log &'
@@ -24,6 +23,7 @@ deploy1:
     - ansible --version
     - ansible-playbook -i /home/centos/ansible/hosts.txt /home/centos/ansible/playbook_be.yml
     - rm -rf /home/centos/eschool.jar
+    - rm -rf /home/centos/builds/
     # - scp /home/centos/eschool.jar centos@10.0.12.8:/home/centos/
     # - ssh centos@10.0.12.8 'java -jar /home/centos/eschool.jar > eschool.log &'
     # - scp /home/centos/eschool.jar centos@10.0.12.7:/home/centos/
