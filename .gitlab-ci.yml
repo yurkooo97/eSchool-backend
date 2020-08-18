@@ -9,7 +9,6 @@ build1:
     - chmod 0777 /home/centos/eschool.jar
     - rm -rf /home/centos/eSchool/
     - rm -rf /home/centos/builds/
-
   tags:
     - my-runner
 
@@ -24,14 +23,9 @@ test1:
 deploy1:
   stage: deploy
   script:
-    - ansible --version
-    - ansible-playbook -i /home/centos/ansible/hosts.txt /home/centos/ansible/playbook_be.yml
+    - ansible-playbook -i /home/centos/ansible/hosts.txt /home/centos/ansible/playbook_ci_be.yml
     - rm -rf /home/centos/eschool.jar
     - rm -rf /home/centos/builds/
-    # - scp /home/centos/eschool.jar centos@10.0.12.8:/home/centos/
-    # - ssh centos@10.0.12.8 'java -jar /home/centos/eschool.jar > eschool.log &'
-    # - scp /home/centos/eschool.jar centos@10.0.12.7:/home/centos/
-    # - ssh centos@10.0.12.7 'java -jar /home/centos/eschool.jar > eschool.log &'
   when: manual
   tags:
     - my-runner
