@@ -7,7 +7,7 @@
 * Add students and teachers to database
 * Create classes and add students into them
 * Add subjects studied at school
-* Assign teachers and subjects to classes 
+* Assign teachers and subjects to classes
 
 #### Teachers functionality
 * View and edit mark book
@@ -15,7 +15,7 @@
 * Add notes for student
 * View school performance chart
 
-#### Students functionality: 
+#### Students functionality:
 * View their school diary with schedule
 * View received marks and notes form teacher
 * View assigned home tasks
@@ -24,9 +24,9 @@
 1. Clone the repository:
 ```
 git clone https://github.com/IF-090Java/eSchool.git
-``` 
+```
 2. Install latest version of the Docker
-3. Make sure files from 'script' directory are executable 
+3. Make sure files from 'script' directory are executable
 4. To start application locally execute the following from the root directory of the project:
 ```
 ./scripts/start.sh
@@ -71,7 +71,7 @@ These variables are used by the application to send password recovery emails
 * JWT_EXPIRATION - lifetime of jwt token in seconds (default value is one hour)
 * ADMIN_USERNAME - initial administrator login login
 * ADMIN_PASSWORD - initial administrator password. It should be encrypted with PASSWORD_ENCODING_KEY. To get encrypted password you can use one of this methods:
-     * [this service](https://www.devglan.com/online-tools/jasypt-online-encryption-decryption) - 
+     * [this service](https://www.devglan.com/online-tools/jasypt-online-encryption-decryption) -
  choose "Two Way Encryption(With Secret Text)" option provide raw password and encoding key and press encrypt
     * if you have jasypt in your maven repository you can use following command:
     ```
@@ -83,7 +83,7 @@ These variables are used by the application to send password recovery emails
 1. Clone the repository:
 ```
 git clone https://github.com/IF-090Java/eSchool.git
-``` 
+```
 2. To build and run application execute:
 
 Windows:
@@ -95,3 +95,5 @@ Linux:
 ./mvnw spring-boot:run
 ```
 3. To access application home page open [localhost:8080](http://localhost:8080/)
+
++ from Alex
