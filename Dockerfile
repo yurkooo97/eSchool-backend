@@ -3,7 +3,7 @@ COPY pom.xml /tmp/
 COPY src /tmp/src/
 WORKDIR /tmp/
 RUN mvn -DskipTests package
-# skip test
+#
 FROM openjdk:8-jdk-alpine
 COPY --from=MAVEN_TOOL_CHAIN /tmp/target/eschool.jar eschool.jar
 EXPOSE 8080
