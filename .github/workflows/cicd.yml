@@ -24,7 +24,7 @@ jobs:
         aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws configure set default.region eu-central-1
-        aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin {{ secrets.ECR_REPO }}
+        aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 383523838589.dkr.ecr.eu-central-1.amazonaws.com/eschool-backend
 
     - name: Build and Push Docker image to ECR
       run: |
